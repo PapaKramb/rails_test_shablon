@@ -24,7 +24,8 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="nav navbar-nav">
-                <li><%= link_to 'Home', home_index_path %></li>
+                <li><%= link_to 'Главная', home_index_path %></li>
+                <li><%= link_to 'Посты', posts_path %></li>
               <div class="nav navbar-nav" style="left: 600px;">
               <% if user_signed_in? %>
                   <li><%= link_to 'Hello,' + "#{current_user.username}" %></li> 
