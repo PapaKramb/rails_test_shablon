@@ -1,3 +1,12 @@
 <h3><%= t('posts.posts_all') %></h3>
 
 <%= link_to 'Создать пост', new_post_path %>
+
+<% @posts.each do |post| %>
+	<p>
+		<%= post.title %>
+	</p>
+	<p>
+		<%= post.body %>
+	</p>
+<% end %>
