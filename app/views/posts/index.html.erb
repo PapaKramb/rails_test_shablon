@@ -1,6 +1,10 @@
 <h3><%= t('posts.posts_all') %></h3>
 
+<hr/>
+
 <%= link_to 'Создать пост', new_post_path %>
+
+<hr/>
 
 <% @posts.each do |post| %>
 	<p>
@@ -9,4 +13,7 @@
 	<p>
 		<%= post.body %>
 	</p>
+	<%= link_to 'Подробнее', post_path(post) %>
 <% end %>
+
+<hr/>

@@ -1,1 +1,31 @@
 <h3><%= t('posts.posts_show') %></h3>
+
+<hr/>
+
+<h4><%= @posts.title %></h4>
+<br/>
+<p>
+	<%= @posts.body %>
+</p>
+
+<% if @posts.user == current_user %>
+	<%= link_to 'Редактировать', edit_post_path(@posts) %>
+	<%= link_to 'Удалить', post_path(@posts), method: :delete, data: {confirm: 'Вы уверены?'} %>
+<% else %>
+	<p>
+		<i>Управлять постом может только автор</i>
+	</p>
+<% end %>
+
+<hr/>
+
+<% @posts.comments.each do |comment| %>
+	<p>
+		<i><%= comment.author %>Сказал: </i></br>
+		<%= comment.body %>
+	</p>
+<% end %>
+
+<% if user_signed_in? %>
+	<h4><%= t('comments.add_comment') %></h4>
+<% end %>

@@ -37,3 +37,6 @@ en:
     posts_show: "Станица поста"
     posts_new: "Создать пост"
     posts_edit: "Редактировать пост"
+
+  comments:
+    add_comment: "Оставить комментарий"
