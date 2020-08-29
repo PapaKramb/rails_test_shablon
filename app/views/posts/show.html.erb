@@ -28,4 +28,17 @@
 
 <% if user_signed_in? %>
 	<h4><%= t('comments.add_comment') %></h4>
+
+	<%= form_for ([@posts, @posts.comments.build]) do |f| %>
+		<p>
+			<%= f.label :body %>
+			<%= f.text_area(:body, {:class => "form-control"}) %>
+		</p>
+			<%= f.submit %>
+	<% end %>
+
+<% else %>
+	<p>
+		<i>Пожалуйста <%= link_to "войдите", new_user_session_path %> или <%= link_to "зарегистрируйтесь", new_user_registration_path %> чтобы оставить комментарий</i>
+	</p>
 <% end %>
